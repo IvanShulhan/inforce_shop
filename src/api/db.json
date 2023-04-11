@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "imageUrl": "./static/white_wine.png",
+      "imageUrl": "./src/api/static/white_wine.png",
       "name": "Chardonnay Barrel",
       "count": 4,
       "size": {
@@ -13,7 +13,7 @@
       "comments": []
     }, {
       "id": 2,
-      "imageUrl": "./static/pink_wine.png",
+      "imageUrl": "./src/api/static/pink_wine.png",
       "name": "Chardonnay Rosé",
       "count": 4,
       "size": {
@@ -24,7 +24,7 @@
       "comments": []
     }, {
       "id": 3,
-      "imageUrl": "./static/white_wine.png",
+      "imageUrl": "./src/api/static/white_wine.png",
       "name": "Dry White",
       "count": 4,
       "size": {
@@ -35,7 +35,7 @@
       "comments": []
     }, {
       "id": 4,
-      "imageUrl": "./static/pink_wine.png",
+      "imageUrl": "./src/api/static/pink_wine.png",
       "name": "Brut Reserva",
       "count": 4,
       "size": {
