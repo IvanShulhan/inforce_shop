@@ -1,32 +1,50 @@
 {
-  "todos": [
+  "products": [
     {
-      "id": "1",
-      "text": "Eat",
-      "completed": true,
-      "meta": {
-        "author": "John",
-        "createdAt": "today"
-      }
-    },
-    {
-      "id": "2",
-      "text": "Code",
-      "completed": true,
-      "meta": {
-        "author": "Jane",
-        "createdAt": "yesterday"
-      }
-    },
-    {
-      "id": "3",
-      "text": "Sleep",
-      "completed": false
-    },
-    {
-      "id": "4",
-      "text": "Repeat",
-      "completed": false
+      "id": 1,
+      "imageUrl": "./static/white_wine.png",
+      "name": "Chardonnay Barrel",
+      "count": 4,
+      "size": {
+      "width": 150,
+      "height": 350
+      },
+      "weight": "700g",
+      "comments": []
+    }, {
+      "id": 2,
+      "imageUrl": "./static/pink_wine.png",
+      "name": "Chardonnay Rosé",
+      "count": 4,
+      "size": {
+      "width": 150,
+      "height": 350
+      },
+      "weight": "700g",
+      "comments": []
+    }, {
+      "id": 3,
+      "imageUrl": "./static/white_wine.png",
+      "name": "Dry White",
+      "count": 4,
+      "size": {
+      "width": 150,
+      "height": 350
+      },
+      "weight": "700g",
+      "comments": []
+    }, {
+      "id": 4,
+      "imageUrl": "./static/pink_wine.png",
+      "name": "Brut Reserva",
+      "count": 4,
+      "size": {
+      "width": 150,
+      "height": 350
+      },
+      "weight": "700g",
+      "comments": []
     }
+
   ]
 }
