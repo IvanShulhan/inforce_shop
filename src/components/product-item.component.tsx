@@ -3,6 +3,8 @@ import {
 } from '@mui/material';
 import React from 'react';
 
+import { useAppDispatch } from '../app/hooks';
+import { removeProduct } from '../app/slices/products.slice';
 import { IProduct } from '../models/product.model';
 
 interface IProps {
@@ -11,6 +13,12 @@ interface IProps {
 
 export const ProductItemComponent: React.FC<IProps> = React.memo(
   ({ product }) => {
+    const dispatch = useAppDispatch();
+
+    const removeItem = (id: number) => {
+      dispatch(removeProduct(id));
+    };
+
     return (
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
@@ -31,7 +39,14 @@ export const ProductItemComponent: React.FC<IProps> = React.memo(
           display: 'flex', justifyContent: 'center',
         }}
         >
-          <Button size="small" variant="outlined" color="error">Delete</Button>
+          <Button
+            size="small"
+            variant="outlined"
+            color="error"
+            onClick={() => removeItem(product.id)}
+          >
+            Delete
+          </Button>
           <Button
             size="small"
             variant="outlined"

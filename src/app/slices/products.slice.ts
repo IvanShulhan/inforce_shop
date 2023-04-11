@@ -25,6 +25,22 @@ export const getProducts = createAsyncThunk(
   },
 );
 
+export const removeProduct = createAsyncThunk(
+  'products/removeProduct',
+  async (id: number) => {
+    await axios.delete(`products/${id}`);
+  },
+);
+
+export const createProduct = createAsyncThunk(
+  'products/createProduct',
+  async (body: IProduct) => {
+    const { data } = await axios.post<IProduct>('/products', body);
+
+    return data;
+  },
+);
+
 export const productsSlice = createSlice({
   name: 'products',
   initialState,
@@ -40,6 +56,21 @@ export const productsSlice = createSlice({
       })
       .addCase(getProducts.rejected, (state) => {
         state.status = 'failed';
+      })
+      .addCase(createProduct.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(createProduct.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.products.push(action.payload);
+      })
+      .addCase(createProduct.rejected, (state) => {
+        state.status = 'failed';
+      })
+      .addCase(removeProduct.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.products
+          = state.products.filter((product) => product.id !== action.meta.arg);
       });
   },
 });

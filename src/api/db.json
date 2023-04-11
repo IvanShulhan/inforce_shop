@@ -6,45 +6,46 @@
       "name": "Chardonnay Barrel",
       "count": 4,
       "size": {
-      "width": 150,
-      "height": 350
+        "width": 150,
+        "height": 350
       },
       "weight": "700g",
       "comments": []
-    }, {
+    },
+    {
       "id": 2,
       "imageUrl": "./src/api/static/pink_wine.png",
       "name": "Chardonnay Rosé",
       "count": 4,
       "size": {
-      "width": 150,
-      "height": 350
+        "width": 150,
+        "height": 350
       },
       "weight": "700g",
       "comments": []
-    }, {
+    },
+    {
       "id": 3,
       "imageUrl": "./src/api/static/white_wine.png",
       "name": "Dry White",
       "count": 4,
       "size": {
-      "width": 150,
-      "height": 350
+        "width": 150,
+        "height": 350
       },
       "weight": "700g",
       "comments": []
     }, {
       "id": 4,
       "imageUrl": "./src/api/static/pink_wine.png",
-      "name": "Brut Reserva",
+      "name": "Chardonnay Rosé",
       "count": 4,
       "size": {
-      "width": 150,
-      "height": 350
+        "width": 150,
+        "height": 350
       },
       "weight": "700g",
       "comments": []
     }
-
   ]
 }

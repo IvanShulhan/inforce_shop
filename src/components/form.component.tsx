@@ -1,28 +1,40 @@
 import { Box, Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 
+import { useAppDispatch } from '../app/hooks';
+import { toggleIsOpen } from '../app/slices/modal.slice';
+import { createProduct } from '../app/slices/products.slice';
 import { productSchema } from '../schemas/product.schema';
 
 export const FormComponent = () => {
+  const dispatch = useAppDispatch();
+
   const formik = useFormik({
     initialValues: {
       name: '',
       imageUrl: '',
       count: 1,
-      width: 0,
-      hight: 0,
-      weight: '',
+      width: 1,
+      height: 1,
+      weight: 1,
       comments: [],
     },
     validationSchema: productSchema,
     validateOnChange: true,
     validateOnMount: true,
     onSubmit: (values) => {
-      alert(
-        JSON.stringify({
-          ...values,
-        }),
-      );
+      const {
+        width, height, weight, ...dataWithoutSize
+      } = values;
+      const id = Date.now();
+
+      dispatch(createProduct(
+        {
+          ...dataWithoutSize, id, size: { width, height }, weight: `${weight}g`,
+        },
+      ));
+
+      dispatch(toggleIsOpen());
       formik.resetForm();
     },
   });
@@ -84,19 +96,20 @@ export const FormComponent = () => {
       />
       <TextField
         fullWidth
-        name="hight"
+        name="height"
         variant="filled"
         type="number"
-        label="Hight"
-        value={formik.values.hight}
+        label="Height"
+        value={formik.values.height}
         onChange={formik.handleChange}
-        error={formik.touched.hight && Boolean(formik.errors.hight)}
-        helperText={formik.touched.hight && formik.errors.hight}
+        error={formik.touched.height && Boolean(formik.errors.height)}
+        helperText={formik.touched.height && formik.errors.height}
       />
       <TextField
         fullWidth
         name="weight"
         variant="filled"
+        type="number"
         label="Weight"
         value={formik.values.weight}
         onChange={formik.handleChange}

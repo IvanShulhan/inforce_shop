@@ -16,7 +16,7 @@ export const ProductListComponent = () => {
   return (
     <Grid container spacing={2}>
       {products.map((product) => (
-        <Grid item xs={3}>
+        <Grid item xs={3} key={product.id}>
           <ProductItemComponent product={product} />
         </Grid>
       ))}
